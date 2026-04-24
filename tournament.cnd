@@ -1,0 +1,15 @@
+temporal:
+  policy: stability
+
+constraints:
+  - orientation: {directions: [directlyRight], selector: left + right}
+  - group: {addEdge: true, selector: left + right, name: pairedWith}
+  - group: {addEdge: true, selector: uses, name: uses}
+
+directives:
+  - size: {width: 140, height: 80, selector: Player + Strategy + Match}
+  - tag: {field: move, selector: Player, toTag: Player, name: move, value: move}
+  - hideField: {field: left}
+  - hideField: {field: right}
+  - hideField: {field: uses}
+  - flag: hideDisconnectedBuiltIns
